@@ -1,0 +1,66 @@
+---
+title: "Marketing Intelligence Individual Assignment"
+author: "Stavros Tsentemeidis"
+date: "6/27/2019"
+output:
+  prettydoc::html_pretty:
+    theme: leonids
+  github_document: default
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## GitHub Repository    
+The whole project is under this repository at my GitHub account or at the second link referring to my personal website.       
+**https://github.com/stsentemeidis/House_Prices_Seattle**   
+
+
+### Loading the files | Performing Calculations
+</br>
+At this point we run the **main_script.R**, which is the main script of the project responsible to running all the necessary *calculations, transformations and results* for the final report.   
+
+```{r cars}
+source('scripts/main_script.R')
+```
+
+
+## Explanation & summary of the dataset
+
+To begin with let's have a look at the meaning of the initial variables provided for the dataset.     
+
+*   **id**: a notation for a house   
+*   **date**: date house was sold   
+*   **price**: price is prediction target   
+*   **bedrooms**: number of bedrooms per house   
+*   **bathrooms**: number of bathrooms per house     
+*   **sqft_living**: square footage of the home   
+*   **sqft_lot**: square footage of the lot        
+*   **floors**: total floors (levels) in house     
+*   **waterfront**: house which has a view to a waterfront    
+*   **view**: has been viewed     
+*   **condition**: how good the condition is (overall)    
+*   **grade**: overall grade given to the housing unit, based on King County grading system  
+
+
+From the below summary and description we can see that:    
+
+1. There are no **missing values**, so our dataset is complete.
+2. The variables *condition* and *grade*  are ordinal variables.
+3. The variables above need to be converted from int to *factors*.
+4. *Bedrooms*, *bathrooms* and *floors* are variables with discrete levels that can be converted to factors probably later on.. 
+
+
+```{r summary, echo=FALSE, warning = FALSE}
+kable(summary(df_train))%>%
+  kable_styling(bootstrap_options = "striped", font_size = 11)%>%
+  scroll_box(width = "100%", height = "400px")
+```
+
+
+```{r Correlation 1, echo=FALSE, warning = FALSE, fig.align='center', fig.width = 8, fig.height= 7}
+plot_correlation(numeric_data_train, size_p = 0.5, size_t = 0.8)
+```
+
