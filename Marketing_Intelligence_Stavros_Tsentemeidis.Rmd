@@ -22,8 +22,8 @@ The whole project is under this repository at my GitHub account or at the second
 </br>
 At this point we run the **main_script.R**, which is the main script of the project responsible to running all the necessary *calculations, transformations and results* for the final report.   
 
-```{r cars}
-source('scripts/main_script.R')
+```{r main, echo=FALSE, warning = FALSE, results='hide'}
+source('main_script.R')
 ```
 
 

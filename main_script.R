@@ -3,8 +3,8 @@
 ######
 
 ###### Loading the necessary scripts | libraries | datasets
-df_train <- read.csv('data/house_price_train.csv')
-df_test  <- read.csv('data/house_price_test.csv')
+# df_train <- read.csv('data/house_price_train.csv')
+# df_test  <- read.csv('data/house_price_test.csv')
 
 source('scripts/install_packages.R')
 source('scripts/fct_plot_correlation.R')
